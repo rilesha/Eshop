@@ -30,10 +30,39 @@ if (count($cart) > 0) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Order Confirmation</title>
+    <title>Order Confirmed - eShop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Thank you! Your order has been placed.</h2>
-    <a href="orders.php">View My Orders</a> | <a href="index.php">Continue Shopping</a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.php" class="logo">eShop</a>
+        <div class="nav-links">
+            <a href="index.php">Shop</a>
+            <a href="cart.php">Cart</a>
+            <a href="orders.php">Orders</a>
+            <a href="logout.php">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Confirmation -->
+    <div class="confirmation-card fade-in">
+        <div class="check-icon">&#10003;</div>
+        <h2>Order Confirmed!</h2>
+        <p>Thank you for your purchase. Your order has been placed successfully.</p>
+        <div class="confirmation-links">
+            <a href="orders.php" class="btn btn-secondary">View My Orders</a>
+            <a href="index.php" class="btn btn-primary">Continue Shopping</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 <span>eShop</span>. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

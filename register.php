@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 
+$error = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -13,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: login.php");
         exit();
     } else {
-        echo "Error: " . mysqli_error($conn);
+        $error = "Error: " . mysqli_error($conn);
     }
 }
 ?>
@@ -21,22 +22,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
+    <title>Register - eShop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Create an Account</h2>
-    <form method="POST" action="register.php">
-        <label>Name:</label><br>
-        <input type="text" name="name" required><br><br>
 
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.php" class="logo">eShop</a>
+        <div class="nav-links">
+            <a href="index.php">Shop</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
+        </div>
+    </nav>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+    <!-- Register Form -->
+    <div class="container-narrow fade-in">
+        <div class="form-card">
+            <h2>Create Account</h2>
+            <p class="form-subtitle">Join eShop for an exclusive shopping experience</p>
 
-        <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="login.php">Login here</a></p>
+            <?php if($error): ?>
+                <div class="error-message"><?php echo $error; ?></div>
+            <?php endif; ?>
+
+            <form method="POST" action="register.php">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required placeholder="Create a password">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                </div>
+            </form>
+
+            <p class="form-footer">Already have an account? <a href="login.php">Sign in</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 <span>eShop</span>. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
