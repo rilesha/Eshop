@@ -29,7 +29,6 @@ $result = mysqli_query($conn, $sql);
                 <a href="products.php">Products</a>
                 <a href="add_product.php">Add Product</a>
                 <a href="orders.php" class="active">Orders</a>
-                <a href="../index.php">View Store</a>
                 <a href="../logout.php">Logout</a>
             </nav>
         </aside>

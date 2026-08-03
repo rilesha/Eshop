@@ -1,5 +1,4 @@
-﻿/* ===== eShop Stylesheet ===== */
-
+﻿
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
@@ -111,6 +110,9 @@ img {
 
 .product-card:hover {
   border-color: #c9a84c;
+
+
+  cursor: pointer;
 }
 
 .product-card .product-image {
@@ -150,6 +152,10 @@ img {
 .product-card .btn-view:hover {
   background: #c9a84c;
   color: #0a0a0a;
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  
 }
 
 /* ---------- Product Detail ---------- */

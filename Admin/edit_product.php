@@ -48,7 +48,6 @@ $product = mysqli_fetch_assoc($result);
                 <a href="products.php" class="active">Products</a>
                 <a href="add_product.php">Add Product</a>
                 <a href="orders.php">Orders</a>
-                <a href="../index.php">View Store</a>
                 <a href="../logout.php">Logout</a>
             </nav>
         </aside>

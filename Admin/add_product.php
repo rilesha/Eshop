@@ -40,7 +40,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <a href="products.php">Products</a>
                 <a href="add_product.php" class="active">Add Product</a>
                 <a href="orders.php">Orders</a>
-                <a href="../index.php">View Store</a>
                 <a href="../logout.php">Logout</a>
             </nav>
         </aside>
